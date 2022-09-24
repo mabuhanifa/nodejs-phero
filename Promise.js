@@ -1,3 +1,4 @@
+// Promises is an asynchronous task
 // 3 states of promises pending -> fulfilled -> rejected
 
 // Promises constructor for promises new Promise();
@@ -14,7 +15,7 @@ const myPromise = new Promise((resolve, reject) => {
 });
 
 /*
- JavaScript promises has three methods. catch , finally, and then
+ JavaScript promises have three methods. catch(), finally(), and then() .
 */
 
 myPromise.then((res) => console.log(res)).catch((err) => console.log(err));
