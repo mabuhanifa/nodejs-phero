@@ -11,7 +11,7 @@ const myPromise = new Promise((resolve, reject) => {
   } else {
     setTimeout(() => {
       resolve({ id: 1, email: "user@example.com" });
-    }, 1000);
+    }, 500);
   }
 });
 
@@ -22,12 +22,12 @@ let userData = [];
 // for (let i = 0; i < userIds.length; i++) {
 //   const userId = userIds[i];
 //   myPromise.then((user) => {
-//     userData.push(user);
-//   });
+    //     userData.push(user);
+    //   });
 
-for (let i = 0; i < userIds.length; i++) {
-  const userId = userIds[i];
-  userData.push(myPromise);
+    for (let i = 0; i < userIds.length; i++) {
+    const userId = userIds[i];
+    userData.push(myPromise);
 }
 
 Promise.all(userData).then((res) => console.log(res));
