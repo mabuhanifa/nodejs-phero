@@ -1,3 +1,8 @@
+const { errorHandler, two } = require("./errorHandler");
+
+//const errorHandler = require("./errorHandler"); default import
+two();
+
 async function getError() {
   // try and catch will not crash the server
   try {
@@ -11,10 +16,5 @@ async function getError() {
 }
 
 getError();
-
-function errorHandler(error) {
-  const { name, message, stack } = error;
-  console.log(name, message);
-}
 
 console.log("Done");
