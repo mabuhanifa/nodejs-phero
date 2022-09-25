@@ -4,15 +4,14 @@ const toolsRoute = require("./routes/toolsRoute.js");
 const app = express();
 const port = process.env.PORT || 5000;
 
-// app.use(viewCount);
 app.use(express.json());
 app.use(express.text());
-
+app.use(express.static("public"));
 
 app.use("/tools", toolsRoute);
 
 app.get("/", (req, res) => {
-  res.send(`Running CRUD server! on port ${port}`);
+  res.sendFile(__dirname + "./public/index.html");
 });
 
 app.all("*", (req, res) => {
