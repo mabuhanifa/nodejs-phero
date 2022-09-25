@@ -1,7 +1,10 @@
 const express = require("express");
+const viewCount = require("./middleware/viewCount.js");
 const toolsRoute = require("./routes/toolsRoute.js");
 const app = express();
 const port = process.env.PORT || 5000;
+
+// app.use(viewCount);
 
 app.use("/tools", toolsRoute);
 
