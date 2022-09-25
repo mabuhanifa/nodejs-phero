@@ -3,7 +3,7 @@
  * @api {get} /tool by id
  **/
 
-const tools = [
+let tools = [
   { id: 1, name: "hammer" },
   { id: 2, name: "hammer2" },
   { id: 3, name: "hammer3" },
@@ -27,6 +27,7 @@ const createTool = (req, res) => {
 
   res.send(tools);
 };
+
 const updateTool = (req, res) => {
   const body = req.body;
   const { id } = req.params;
@@ -36,4 +37,10 @@ const updateTool = (req, res) => {
   res.send(tools);
 };
 
-module.exports = { getTools, getTool, createTool, updateTool };
+const deleteTool = (req, res) => {
+  const { id } = req.params;
+  tools = tools.filter((t) => t.id !== Number(id));
+  res.send(tools);
+};
+
+module.exports = { getTools, getTool, createTool, updateTool, deleteTool };
