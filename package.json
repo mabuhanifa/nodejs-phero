@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/mabuhanifa/nodejs-phero/issues"
   },
-  "homepage": "https://github.com/mabuhanifa/nodejs-phero#readme"
+  "homepage": "https://github.com/mabuhanifa/nodejs-phero#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
 }

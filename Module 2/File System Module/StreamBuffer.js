@@ -15,11 +15,13 @@ readStream.on("open", () => {
   console.log("stream is open");
 });
 
+/*------------pause()--------------*/
 setTimeout(() => {
   readStream.pause();
   console.log("stream is on pause now");
 }, 10);
 
+/*------------resume()--------------*/
 setTimeout(() => {
   readStream.resume();
   console.log("stream is on resume now");
