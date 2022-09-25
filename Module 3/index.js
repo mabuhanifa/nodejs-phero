@@ -5,6 +5,9 @@ const app = express();
 const port = process.env.PORT || 5000;
 
 // app.use(viewCount);
+app.use(express.json());
+app.use(express.text());
+
 
 app.use("/tools", toolsRoute);
 
