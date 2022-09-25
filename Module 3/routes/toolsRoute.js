@@ -1,17 +1,7 @@
-/** 
- @api {post} /tools all tools
-
-*/
-
 const express = require("express");
+const { getTools } = require("../controllers/toolsController");
 const router = express.Router();
 
-// router.get("/", (req, res) => {
-//   res.send("tools found");
-// });
-
-router.route("/").get((req, res) => {
-  res.send("tools found");
-});
+router.route("/").get(getTools);
 
 module.exports = router;

@@ -1,10 +1,9 @@
-const { application } = require("express");
 const express = require("express");
-const toolRoutes = require("./routes/toolsRoute.js");
+const toolsRoute = require("./routes/toolsRoute.js");
 const app = express();
 const port = process.env.PORT || 5000;
 
-app.use("/tools", toolRoutes);
+app.use("/tools", toolsRoute);
 
 app.get("/", (req, res) => {
   res.send(`Running CRUD server! on port ${port}`);
