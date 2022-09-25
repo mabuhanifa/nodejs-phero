@@ -9,22 +9,31 @@ const tools = [
   { id: 3, name: "hammer3" },
 ];
 
-const getTools = (req, res, next) => {
+const getTools = (req, res) => {
   const { limit, page } = req.query;
   res.json(tools.slice(0, limit));
 };
 
-const getTool = (req, res, next) => {
+const getTool = (req, res) => {
   const { id } = req.params;
   const tool = tools.find((t) => t.id === Number(id));
   res.json(tool);
 };
-const createTool = (req, res, next) => {
+
+const createTool = (req, res) => {
   const body = req.body;
 
-  tools.push(body)
+  tools.push(body);
 
   res.send(tools);
 };
+const updateTool = (req, res) => {
+  const body = req.body;
+  const { id } = req.params;
+  const tool = tools.find((t) => t.id === Number(id));
+  tool.id = Number(id);
+  tool.name = body.name;
+  res.send(tools);
+};
 
-module.exports = { getTools, getTool, createTool };
+module.exports = { getTools, getTool, createTool, updateTool };
