@@ -57,6 +57,19 @@ const productSchema = mongoose.Schema(
         message: "Status cannot be {VALUE}",
       },
     },
+    supplier: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Supplier",
+    },
+    categories: [
+      {
+        name: {
+          type: String,
+          required: true,
+        },
+        _id: mongoose.Schema.Types.ObjectId,
+      },
+    ],
     // createdAt: {
     //   typeof: Date,
     //   default: Date.now(),
