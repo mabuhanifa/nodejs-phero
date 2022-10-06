@@ -29,7 +29,7 @@ const productSchema = mongoose.Schema(
       type: String,
       required: [true, "Please provide a unit"],
       enum: {
-        value: ["kg", "liter", "pcs"],
+        values: ["kg", "liter", "pcs"],
         message: "unit value cannot be {VALUE}, must be kg,liter,pcs",
       },
     },
@@ -70,14 +70,19 @@ const productSchema = mongoose.Schema(
         _id: mongoose.Schema.Types.ObjectId,
       },
     ],
-    // createdAt: {
-    //   typeof: Date,
-    //   default: Date.now(),
-    // },
-    // updatedAt: {
-    //   typeof: Date,
-    //   default: Date.now(),
-    // },
+    /*
+createdAt: {
+      typeof: Date,
+      default: Date.now(),
+    },
+    updatedAt: {
+      typeof: Date,
+      default: Date.now(),
+    },
+    === {
+    timeStamps: true,
+  }
+*/
   },
   {
     timeStamps: true,
