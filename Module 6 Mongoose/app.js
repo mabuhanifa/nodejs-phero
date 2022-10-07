@@ -70,19 +70,6 @@ const productSchema = mongoose.Schema(
         _id: mongoose.Schema.Types.ObjectId,
       },
     ],
-    /*
-createdAt: {
-      typeof: Date,
-      default: Date.now(),
-    },
-    updatedAt: {
-      typeof: Date,
-      default: Date.now(),
-    },
-    === {
-    timeStamps: true,
-  }
-*/
   },
   {
     timeStamps: true,
